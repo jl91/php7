@@ -7,7 +7,8 @@ RUN apt-get update && \
 
 EXPOSE 80
 
-COPY vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY vhost.conf /etc/apache2/sites-enabled/000-default.conf
+COPY apache.conf /etc/apache2/apache.conf
 
 RUN mkdir -p /var/www/html/app && \
     chown -R  www-data:www-data /var/www/html/app && \
